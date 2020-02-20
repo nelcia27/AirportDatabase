@@ -15,8 +15,8 @@ public class Lot {
     private String samolot;
 
 
-    Lot(String id_lotu, Date data_wylotu, Date data_przylotu, String z_do, int brama, String liniaLotnicza, String skomunikowaneLotnisko, String samolot){
-        this.id_lotu=id_lotu;
+    Lot(/*String id_lotu, */Date data_wylotu, Date data_przylotu, String z_do, int brama, String liniaLotnicza, String skomunikowaneLotnisko, String samolot){
+        //.id_lotu=id_lotu;
         this.data_wylotu=data_wylotu;
         this.data_przylotu=data_przylotu;
         this.z_do=z_do;
@@ -52,6 +52,14 @@ public class Lot {
 
     public String getSamolot() {
         return samolot;
+    }
+
+    public String getId_lotu() {
+        return id_lotu;
+    }
+
+    public void setId_lotu(String id_lotu) {
+        this.id_lotu = id_lotu;
     }
 }
 

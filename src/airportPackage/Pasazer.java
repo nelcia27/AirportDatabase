@@ -4,15 +4,6 @@ public class Pasazer {
     private String pesel;
     private String imie;
     private String nazwisko;
-
-    public int getWaga_bagazu() {
-        return waga_bagazu;
-    }
-
-    public String getId_biletu() {
-        return id_biletu;
-    }
-
     private String id_biletu;
     private int waga_bagazu;
 
@@ -34,5 +25,13 @@ public class Pasazer {
 
     public String getNazwisko() {
         return nazwisko;
+    }
+
+    public int getWaga_bagazu() {
+        return waga_bagazu;
+    }
+
+    public String getId_biletu() {
+        return id_biletu;
     }
 }

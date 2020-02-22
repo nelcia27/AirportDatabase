@@ -895,7 +895,7 @@ public class Main extends Component {
                 while (rs1.next()) {
                     stmt.executeQuery("delete from bagaze where bilet_id='" + rs1.getString(1) + "'");
                 }
-                stmt.executeQuery("delete from bilety where bilet_id='" + rs.getString(1) + "'");
+                stmt.executeQuery("delete from bilety where id='" + rs.getString(1) + "'");
                 stmt.executeQuery("delete from loty where id='" + rs.getString(1) + "'");
             }
             String query = "delete from lotniska where nazwa='" + nazwa + "'";
@@ -926,7 +926,7 @@ public class Main extends Component {
                 while (rs1.next()) {
                     stmt.executeQuery("delete from bagaze where bilet_id='" + rs1.getString(1) + "'");
                 }
-                stmt.executeQuery("delete from bilety where bilet_id='" + rs.getString(1) + "'");
+                stmt.executeQuery("delete from bilety where id='" + rs.getString(1) + "'");
                 stmt.executeQuery("delete from loty where id='" + rs.getString(1) + "'");
             }
             String query = "delete from linie_lotnicze where nazwa='" + nazwa + "'";
@@ -957,7 +957,7 @@ public class Main extends Component {
                 while (rs1.next()) {
                     stmt.executeQuery("delete from bagaze where bilet_id='" + rs1.getString(1) + "'");
                 }
-                stmt.executeQuery("delete from bilety where bilet_id='" + rs.getString(1) + "'");
+                stmt.executeQuery("delete from bilety where id='" + rs.getString(1) + "'");
                 stmt.executeQuery("delete from loty where id='" + rs.getString(1) + "'");
             }
             String query = "delete from bramy where numer='" + numer + "'";
@@ -1086,13 +1086,13 @@ public class Main extends Component {
         int changes = 0;
         try {
             stmt = conn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_READ_ONLY);
-            rs = stmt.executeQuery("select id from bilety where id='" + id_lotu + "'");
+            rs = stmt.executeQuery("select id from bilety where lot_id='" + id_lotu + "'");
             while (rs.next()) {
                 rs1 = stmt.executeQuery("select id from bagaze where bilet_id='" + rs.getString(1) + "'");
                 while (rs1.next()) {
                     stmt.executeQuery("delete from bagaze where bilet_id='" + rs1.getString(1) + "'");
                 }
-                stmt.executeQuery("delete from bilety where bilet_id='" + rs.getString(1) + "'");
+                stmt.executeQuery("delete from bilety where id='" + rs.getString(1) + "'");
             }
             String query = "delete from loty where id='" + id_lotu + "'";
             changes = stmt.executeUpdate(query);
